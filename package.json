@@ -6,14 +6,17 @@
     "@apollo/react-hooks": "^3.1.0",
     "apollo-boost": "^0.4.4",
     "graphql": "^14.5.4",
-    "netlify-cli": "^12.2.9",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1"
   },
+  "devDependencies": {
+    "netlify-cli": "^12.2.9"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "netlify dev",
+    "build": "mkdir -p dist && cp -R src/* dist/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
