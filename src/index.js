@@ -2,17 +2,22 @@ import { ApolloProvider, useQuery } from '@apollo/react-hooks';
 import ApolloClient, { gql } from 'apollo-boost';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserProvider } from './UserContext';
+import UserTable from './components/UserTable';
+import UserDetailsForm from './components/UserDetailsForm';
 import env from './env';
+import './index.css';
 
 const client = new ApolloClient({
-  uri: env.GRAPHQL_ENDPOINT || process.env.GRAPHQL_ENDPOINT,
-  request: operation => {
+  uri: env.GRAPHQL_ENDPOINT,
+  request: (operation) => {
     operation.setContext({
       headers: {
-        'x-api-key': env.GRAPHQL_API_KEY || process.env.GRAPHQL_API_KEY,
-      }
-    })
-  }
+        'x-api-key': env.GRAPHQL_API_KEY,
+      },
+    });
+  },
 });
 
 const ALL_USERS_QUERY = gql`
@@ -37,17 +42,20 @@ const App = () => {
   }
 
   return (
-    <pre>
-      <code>
-        {JSON.stringify(data, null, 2)}
-      </code>
-    </pre>
-  )
-}
+    <UserProvider>
+      <Routes>
+        <Route path="/" element={<UserTable data={data} />} />
+        <Route path="/user-details/:id" element={<UserDetailsForm />} />
+      </Routes>
+    </UserProvider>
+  );
+};
 
 const Root = () => (
   <ApolloProvider client={client}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </ApolloProvider>
 );
 
