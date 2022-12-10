@@ -5,11 +5,11 @@ import ReactDOM from 'react-dom';
 import env from './env';
 
 const client = new ApolloClient({
-  uri: env.GRAPHQL_ENDPOINT,
+  uri: env.GRAPHQL_ENDPOINT || process.env.GRAPHQL_ENDPOINT,
   request: operation => {
     operation.setContext({
       headers: {
-        'x-api-key': env.GRAPHQL_API_KEY,
+        'x-api-key': env.GRAPHQL_API_KEY || process.env.GRAPHQL_API_KEY,
       }
     })
   }
