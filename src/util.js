@@ -11,4 +11,12 @@ export const roleHelper = (role) => {
   }
 };
 
+export const roleListHelper = roleListItem => {
+  if (roleListItem !== 'App Manager') {
+    return roleListItem.toUpperCase(); 
+  } else {
+    return roleListItem.split(' ').join('_').toUpperCase()
+  }
+}
+
 export const roleList = ['Admin', 'Developer', 'App Manager', 'Marketing', 'Sales'];
