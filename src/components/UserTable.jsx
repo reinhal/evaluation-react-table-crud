@@ -41,15 +41,18 @@ export const UserTable = ({data}) => {
         const localUserToDelete = data.allUsers.filter((user, index) => {
           if(index === curIndex) {
             return user
-          }})
+          }
+          return; 
+        })
         usersToDelete.push(localUserToDelete[0].email)
       }
+      return; 
     }); 
 
     useEffect(() => {
       handleDeleteButton()
       handleEmailLink()
-    }, [isChecked]); 
+    }, [isChecked, handleDeleteButton]); 
 
     const DELETE_USERS_MUTATION = gql`
       mutation DeleteUsersMutation($emails: [ID]!) {
