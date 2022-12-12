@@ -54,6 +54,8 @@ export default {
 
 I enjoyed working on this project. Thank you for the opportunity to give it a shot.
 
+I was limited in time due to the request on your end to have it back in 2-3 days and my availability to work on it.  My experience with GraphQL is introductory and spent the majority of my effort on refreshing my GraphQL knowledge.  
+
 ### Designs + Functionality Implemented
 
 Designs and functionality as outlined above and illustrated in Zeplin and abov are in place with the exception of the finer points of the check boxes and radio circles. I could not access the input to customized with box-shodow. I learned I could style them by disabling the native appearance, but that change how the buttons functioned. I determined this was out of scope for this exercise.
@@ -71,3 +73,7 @@ If I would spend more time on this I would like to accomplish:
 - implement the query to reset the users
 - handle the re-fetching data after an update so the user does not need to refresh
 - handle getting the current user from the path when on the /user-details/:id page
+- implementing form data validation and enabling/disabling buttons accordingly
+- semantic html was used, but with more effort I would have made sure all acessibility standards were in place. 
+- additionally, I would like to ensure the designs were responsive and worked on all devices/ screen sizes
+- toast notifications instead of the alert windows, I used to alerts as a scrappy way to handle the results of the data being updated/deleted.
