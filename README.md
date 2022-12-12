@@ -11,7 +11,7 @@
 ```js
 export default {
   GRAPHQL_ENDPOINT: '',
-  GRAPHQL_API_KEY: ''
+  GRAPHQL_API_KEY: '',
 };
 ```
 
@@ -49,3 +49,25 @@ export default {
 - How you structure your files.
 - How you implement layouts and how clean your styles are.
 - Adhering to the Prettier and ESLint config set up in the starter repository.
+
+## Notes
+
+I enjoyed working on this project. Thank you for the opportunity to give it a shot.
+
+### Designs + Functionality Implemented
+
+Designs and functionality as outlined above and illustrated in Zeplin and abov are in place with the exception of the finer points of the check boxes and radio circles. I could not access the input to customized with box-shodow. I learned I could style them by disabling the native appearance, but that change how the buttons functioned. I determined this was out of scope for this exercise.
+
+### Deploy Challenges
+
+I was able to use Netlify and successfully deploy the application locally. Unfortunately, I am not able to offer you a live link because either Netlify could not find the file with the env variables or the index.html was not served up properly. I dug around a bit but it ended up being a bit of time sink for me and I determined that this stretched the edge of my experience with Netlify.
+
+### Future Work
+
+If I would spend more time on this I would like to accomplish:
+
+- a full testing suite for each js file and react component I wrote, using jest and react-testing-library
+- more invesitigation into Netlify and how to get a live deploy built
+- implement the query to reset the users
+- handle the re-fetching data after an update so the user does not need to refresh
+- handle getting the current user from the path when on the /user-details/:id page
