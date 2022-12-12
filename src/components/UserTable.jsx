@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState, useCallback} from 'react'; 
+import React, {useContext, useEffect, useState} from 'react'; 
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
@@ -13,13 +13,13 @@ export const UserTable = ({data}) => {
     )
     let usersToDelete = []
     
-    const handleDeleteButton = useCallback(() => {
+    const handleDeleteButton = () => {
       if (usersToDelete.length > 0) {
         return 'delete-button delete-button-checked'
       } else {
         return 'delete-button'
       }
-    }, [usersToDelete.length])
+    }
 
     const handleEmailLink = (isUserChecked) => {
       if (isUserChecked) {
@@ -42,7 +42,7 @@ export const UserTable = ({data}) => {
           if(index === curIndex) {
             return user
           } else {
-            return usersToDelete; 
+            return user; 
           }
         })
         usersToDelete.push(localUserToDelete[0].email)
