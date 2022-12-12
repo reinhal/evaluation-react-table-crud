@@ -19,7 +19,7 @@ export const UserTable = ({data}) => {
       } else {
         return 'delete-button'
       }
-    })
+    }, [usersToDelete.length])
 
     const handleEmailLink = (isUserChecked) => {
       if (isUserChecked) {
@@ -42,13 +42,14 @@ export const UserTable = ({data}) => {
           if(index === curIndex) {
             return user
           } else {
-            return; 
+            return usersToDelete; 
           }
         })
         usersToDelete.push(localUserToDelete[0].email)
       } else {
-        return; 
+        return usersToDelete; 
       }
+      return usersToDelete; 
     }); 
 
     useEffect(() => {
