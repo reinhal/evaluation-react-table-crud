@@ -6,14 +6,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './UserContext';
 import UserTable from './components/UserTable';
 import UserDetailsForm from './components/UserDetailsForm';
+import env from './env';
 import './index.css';
 
 const client = new ApolloClient({
-  uri: process.env.GRAPHQL_ENDPOINT,
+  uri: env.GRAPHQL_ENDPOINT || process.env.GRAPHQL_ENDPOINT,
   request: (operation) => {
     operation.setContext({
       headers: {
-        'x-api-key': process.env.GRAPHQL_API_KEY,
+        'x-api-key': env.GRAPHQL_API_KEY || process.env.GRAPHQL_API_KEY,
       },
     });
   },
