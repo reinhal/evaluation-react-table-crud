@@ -54,7 +54,7 @@ export default {
 
 I enjoyed working on this project. Thank you for the opportunity to give it a shot.
 
-I was limited in time due to the request on your end to have it back in 2-3 days and my availability to work on it.  My experience with GraphQL is introductory and spent the majority of my effort on refreshing my GraphQL knowledge.  
+I was limited in time due to the request on your end to have it back in 2-3 days and my availability to work on it. My experience with GraphQL is introductory and spent the majority of my effort on refreshing my GraphQL knowledge.
 
 ### Designs + Functionality Implemented
 
@@ -64,16 +64,17 @@ Designs and functionality as outlined above and illustrated in Zeplin and abov a
 
 I was able to use Netlify and successfully deploy the application locally. Unfortunately, I am not able to offer you a live link because either Netlify could not find the file with the env variables or the index.html was not served up properly. I dug around a bit but it ended up being a bit of time sink for me and I determined that this stretched the edge of my experience with Netlify.
 
+UPDATE: These have been addressed through Netlify CLI. The site can be found live [here](https://63979d11a1e2494f7c21d264--wonderful-clafoutis-f0ff1c.netlify.app/)
+
 ### Future Work
 
 If I would spend more time on this I would like to accomplish:
 
 - a full testing suite for each js file and react component I wrote, using jest and react-testing-library
-- more invesitigation into Netlify and how to get a live deploy built
 - implement the query to reset the users
 - handle the re-fetching data after an update so the user does not need to refresh
 - handle getting the current user from the path when on the /user-details/:id page
 - implementing form data validation and enabling/disabling buttons accordingly
-- semantic html was used, but with more effort I would have made sure all acessibility standards were in place. 
+- semantic html was used, but with more effort I would have made sure all acessibility standards were in place.
 - additionally, I would like to ensure the designs were responsive and worked on all devices/ screen sizes
 - toast notifications instead of the alert windows, I used to alerts as a scrappy way to handle the results of the data being updated/deleted.
